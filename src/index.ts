@@ -27,7 +27,7 @@ import {Course} from "./models/home/report";
 import {Form} from "./models/home/assessment";
 import {Record} from "./models/home/expenditure";
 import {NewsSlice, SourceTag} from "./models/news/news";
-import {getCaptchaUrl, loginCr} from "./lib/cr";
+import {getCaptchaUrl, getCoursePlan, loginCr} from "./lib/cr";
 
 export class InfoHelper {
     public userId = "";
@@ -150,4 +150,6 @@ export class InfoHelper {
     public getCrCaptchaUrl = async () => getCaptchaUrl();
 
     public loginCr = async (captcha: string) => loginCr(this, captcha);
+
+    public getCrCoursePlan = async (semester: string) => getCoursePlan(this, semester);
 }
